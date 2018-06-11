@@ -6,12 +6,16 @@ class HomeController < ApplicationController
 
     @url = 'https://api.coinmarketcap.com/v2/ticker/'
     @url = URI(@url)
-    @response = Netgit status::HTTP.get(@url)
+    @response = Net::HTTP.get(@url)
     @coins = JSON.parse(@response)
 
   end
 
   def about
 
+  end
+
+  def search
+   @symbol = params[:sym]
   end
 end

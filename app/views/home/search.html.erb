@@ -1,0 +1,11 @@
+<h4>Coin Lookup</h4>
+<br/>
+
+<%= form_tag home_search_path, :method => 'POST' do %>
+  <%= text_field_tag 'sym', nil, placeholder: 'Enter Crypto Symbol', size: 50 %>
+  <%= submit_tag 'Lookup Stock Quote' %>
+<% end %>
+
+<br/><br/>
+
+<%= @symbol %>

@@ -18,7 +18,10 @@
         <li><%= link_to "about", home_about_path %></li>
         <li><%= link_to "search", home_search_path %></li>
 
+
         <% if user_signed_in? %>
+          <li><%= link_to "list cryptos", cryptos_path %></li>
+          <li><%= link_to "add new", new_crypto_path %></li>
           <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "edit profile", edit_user_registration_path %></li>
         <% else %>

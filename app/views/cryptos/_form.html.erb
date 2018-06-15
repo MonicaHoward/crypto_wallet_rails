@@ -1,0 +1,36 @@
+<%= form_for(@crypto) do |f| %>
+  <% if @crypto.errors.any? %>
+    <div id="error-explaination">
+      <h2><%= pluralize(@crypto.errors.count, "error")%></h2>
+    </div>
+
+    <ul>
+      <%= @crypto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
+    <div class="form-group">
+      <%= f.label :symbol %><br/>
+      <%= f.text_field :symbol %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :user_id %><br/>
+      <%= f.number_field :user_id, value: current_user.id%>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :cost_per %><br/>
+      <%= f.text_field :cost_per %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :amount_purchased %><br/>
+      <%= f.text_field :amount_purchased %>
+    </div>
+    <div class="action">
+      <%= f.submit %>
+    </div>
+  <% end %>
+<% end %>

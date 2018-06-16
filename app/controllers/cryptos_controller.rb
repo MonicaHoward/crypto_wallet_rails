@@ -6,7 +6,12 @@ class CryptosController < ApplicationController
     @cryptos = Crypto.all
   end
 
+  def show
+  end
+
   def new
     @crypto = Crypto.new
   end
+
+
 end

@@ -2,13 +2,14 @@
   <% if @crypto.errors.any? %>
     <div id="error-explaination">
       <h2><%= pluralize(@crypto.errors.count, "error")%></h2>
-    </div>
 
     <ul>
       <%= @crypto.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
+    </div>
+    <% end %>
 
     <div class="form-group">
       <%= f.label :symbol %><br/>
@@ -33,4 +34,3 @@
       <%= f.submit %>
     </div>
   <% end %>
-<% end %>

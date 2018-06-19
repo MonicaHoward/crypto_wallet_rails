@@ -14,7 +14,7 @@
 
   <tbody>
    <% @cryptos.each do |crypto| %>
-    <% if crypto.user_id == current_user_id %>
+    <% if crypto.user_id == current_user.lid %>
     <tr>
       <td><%= crypto.symbol %></td>
       <td><%= crypto.user_id %></td>
@@ -22,7 +22,7 @@
       <td><%= crypto.amount_purchased %></td>
       <td><%= link_to "show", crypto %></td>
       <td><%= link_to "edit", edit_crypto_path(crypto) %></td>
-      <td><%= link_to "delete", crypto, method: :delete, data: %></td>
+      <td><%= link_to "delete", crypto, method: :delete, data: { confirm: "Are you sure?"} %></td>
     </tr>
    <% end %>
     <% end %>

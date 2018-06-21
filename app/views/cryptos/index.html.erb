@@ -12,8 +12,18 @@
   </thead>
 
   <tbody>
-   <% @cryptos.each do |crypto| %>
-    <% if crypto.user_id == current_user.id %>
+    <% @cryptos.each do |crypto| %>
+      <% if crypto.user_id == current_user.id %>
+        <% if crypto.symbol %>
+          <% crypto.symbol = crypto.symbol.upcase %>
+        <% end %>
+      <tr>
+        <% for x in @search_crypto %>
+          <% if crypto.symbol == x["symbol"] %>
+            <%= x["name"] %>: $<%= x["price_usd"] %><br/>
+            Rank: <%= x["rank"] %><br/><br/>
+          <% end %>
+      <% end %>
     <tr>
       <td><%= crypto.symbol %></td>
       <td><%= crypto.cost_per %></td>
@@ -23,7 +33,8 @@
       <td><%= link_to "delete", crypto, method: :delete, data: { confirm: "Are you sure?"} %></td>
     </tr>
    <% end %>
-    <% end %>
+  <% end %>
+
   </tbody>
 </table>
 

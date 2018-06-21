@@ -10,7 +10,7 @@ class CryptosController < ApplicationController
     @url = 'https://api.coinmarketcap.com/v1/ticker/'
     @uri = URI(@url)
     @response = Net::HTTP.get(@uri)
-    @search = JSON.parse(@response)
+    @search_crypto = JSON.parse(@response)
     @profit_loss = 0
   end
 

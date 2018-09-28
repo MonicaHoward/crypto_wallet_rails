@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Symbol</th>
       <th>Rank</th>
       <th>Current Price</th>
       <th>Total Value</th>
@@ -19,13 +20,14 @@
   <tbody>
     <% @cryptos.each do |crypto| %>
       <% if crypto.user_id == current_user.id %>
-        <% if crypto.symbol %>
-          <% crypto.symbol = crypto.symbol.upcase %>
+        <% if crypto.name %>
+          <% crypto.name = crypto.name.titlecase %>
         <% end %>
       <tr>
         <% for x in @search_crypto %>
-          <% if crypto.symbol == x["symbol"] %>
+          <% if crypto.name == x["name"] %>
             <td><%= link_to x["name"], crypto %></td>
+            <td><%= x["symbol"]%></td>
             <td><%= x["rank"]%></td>
             <td>$<%= x["price_usd"].to_d * crypto.amount_purchased %></td>
             <td>$<%= crypto.cost_per * crypto.amount_purchased %></td>

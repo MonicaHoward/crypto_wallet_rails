@@ -22,14 +22,14 @@
           <% crypto.symbol = crypto.symbol.upcase %>
         <% end %>
       <tr>
-        <% for x in @search_crypto["data"].values %>
+        <% for x in @search_crypto %>
           <% if crypto.symbol == x["symbol"] %>
             <td><%= link_to x["name"], crypto %></td>
             <td><%= x["rank"]%></td>
-            <td><%= number_to_currency(x["quotes"]["USD"]["price"]) %></td>
-            <td><%= number_to_currency(x["quotes"]["USD"]["price"].to_d * crypto.amount_purchased) %></td>
-            <% pnl = (x["quotes"]["USD"]["price"].to_d * crypto.amount_purchased) - (crypto.cost_per * crypto.amount_purchased) %>
-            <td><%= number_to_currency(pnl) %></td>
+            <td>$<%= x["price_usd"].to_d * crypto.amount_purchased %></td>
+            <td>$<%= crypto.cost_per * crypto.amount_purchased %></td>
+            <td>$<%= (x["price_usd"].to_d * crypto.amount_purchased) - (crypto.cost_per * crypto.amount_purchased)  %></td>
+            <% @profit_loss += (x["price_usd"].to_d * crypto.amount_purchased) - (crypto.cost_per * crypto.amount_purchased)  %>
 
       <% end %>
       <% end %>

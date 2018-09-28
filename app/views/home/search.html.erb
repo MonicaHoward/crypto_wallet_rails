@@ -5,7 +5,7 @@
   <div class="panel-body">
     <div class="form-group">
       <%= form_tag home_search_path, :method => 'POST' do %>
-        <%= text_field_tag 'sym', nil, placeholder: 'Enter Crypto Symbol', size: 50 %>
+        <%= text_field_tag 'crypto_name', nil, placeholder: 'Enter Crypto Name', size: 50 %>
         <%= submit_tag 'Lookup Crypto' %>
       <% end %>
     </div>
@@ -14,13 +14,12 @@
 
 <br/><br/>
 
-<% @symbol %>
-
-<% if @symbol %>
+<% if @name %>
   <% for x in @coin_search %>
-    <% if @symbol == x["symbol"] %>
-      <%= x["name"] %>: $<%= x["price_usd"] %><br/>
-      Rank: <%= x["rank"] %><br/><br/>
+    <% if @name == x["name"] %>
+      <%= x["name"] %> <br/><br/>
+      Rank: <%= x["rank"] %> <br/><br/>
+      <%= x["symbol"] %>: $<%= x["price_usd"] %><br/>
     <% end %>
   <% end %>
 <% end %>

@@ -12,6 +12,7 @@
       <th>Symbol</th>
       <th>Cost At Purchase</th>
       <th>Amount Purchased</th>
+      <th>Edit</th>
     </tr>
   </thead>
 
@@ -37,6 +38,7 @@
       <td><%= crypto.symbol %></td>
       <td><%= crypto.cost_per %></td>
       <td><%= crypto.amount_purchased %></td>
+        <td><%= link_to 'Edit', edit_crypto_path(crypto [:id]) %></td>
     </tr>
    <% end %>
   <% end %>

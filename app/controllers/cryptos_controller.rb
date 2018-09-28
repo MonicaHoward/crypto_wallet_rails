@@ -75,7 +75,7 @@ class CryptosController < ApplicationController
   end
 
   def crypto_params
-    params.require(:crypto).permit(:symbol, :user_id, :cost_per, :amount_purchased )
+    params.require(:crypto).permit(:name, :user_id, :cost_per, :amount_purchased )
   end
 
   def correct_user

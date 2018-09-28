@@ -4,3 +4,4 @@
 
 <%= link_to 'Show', @crypto %> |
 <%= link_to 'Back', cryptos_path %>
+<%= link_to 'Delete Crypto Currency', crypto_path(@crypto), method: :delete, data: { confirm: 'Are you sure?' } %>

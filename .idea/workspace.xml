@@ -4,7 +4,6 @@
     <list default="true" id="6f4bcebc-7823-406b-9906-aec95d2573a5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +49,8 @@
           <file leaf-file-name="Gemfile" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Gemfile">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
-                  <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+                <state relative-caret-position="157">
+                  <caret line="34" column="15" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -418,12 +417,12 @@
       <workItem from="1530545400653" duration="460000" />
       <workItem from="1532563911125" duration="1427000" />
       <workItem from="1537928824846" duration="650000" />
-      <workItem from="1538002271192" duration="17830000" />
+      <workItem from="1538002271192" duration="18049000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66826000" />
+    <option name="totallyTimeSpent" value="67045000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -853,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="157">
+          <caret line="34" column="15" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="15" />
           <folding />
         </state>
       </provider>

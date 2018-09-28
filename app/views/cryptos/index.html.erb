@@ -10,7 +10,6 @@
       <th>Current Price</th>
       <th>Total Value</th>
       <th>Profit/Loss</th>
-      <th>Symbol</th>
       <th>Cost At Purchase</th>
       <th>Amount Purchased</th>
       <th>Edit</th>
@@ -20,25 +19,24 @@
   <tbody>
     <% @cryptos.each do |crypto| %>
       <% if crypto.user_id == current_user.id %>
-        <% if crypto.name %>
-          <% crypto.name = crypto.name.titlecase %>
+        <% if crypto.symbol %>
+          <% crypto.symbol = crypto.symbol.upcase %>
         <% end %>
       <tr>
         <% for x in @search_crypto %>
-          <% if crypto.name == x["name"] %>
+          <% if crypto.symbol == x["symbol"] %>
             <td><%= link_to x["name"], crypto %></td>
             <td><%= x["symbol"]%></td>
             <td><%= x["rank"]%></td>
-            <td>$<%= x["price_usd"].to_d * crypto.amount_purchased %></td>
-            <td>$<%= crypto.cost_per * crypto.amount_purchased %></td>
+            <td><%= number_to_currency(x["price_usd"]) %></td>
+            <td><%= x["price_usd"].to_d * crypto.amount_purchased %></td>
             <td>$<%= (x["price_usd"].to_d * crypto.amount_purchased) - (crypto.cost_per * crypto.amount_purchased)  %></td>
             <% @profit_loss += (x["price_usd"].to_d * crypto.amount_purchased) - (crypto.cost_per * crypto.amount_purchased)  %>
 
       <% end %>
       <% end %>
 
-      <td><%= crypto.symbol %></td>
-      <td><%= crypto.cost_per %></td>
+      <td><%= number_to_currency(crypto.cost_per) %></td>
       <td><%= crypto.amount_purchased %></td>
         <td><%= link_to 'Edit', edit_crypto_path(crypto [:id]) %></td>
     </tr>

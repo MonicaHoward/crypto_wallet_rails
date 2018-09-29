@@ -13,6 +13,7 @@ gem 'rails', '~> 5.1.6'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'mysql2'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -48,7 +49,7 @@ group :development do
 end
 
 group :production do
-  gem 'mysql2'
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -2,9 +2,7 @@
   "name": "crypto_wallet_rails",
   "private": true,
   "dependencies": {},
-  "engines": {
-    "yarn": "1.10.0"
-  }
+  "postinstall": "npm rebuild node-sass"
 
 },
 
